@@ -1,0 +1,15 @@
+# what lang using?
+language: node_js
+# what version node?
+node_js: {
+  - "8"
+}
+# distribution (OS of virtual machine)
+dist: trusty
+# list services NN
+services:
+  - mongodb
+  - reds-server
+# list enviroment variables
+env:
+  - NODE_ENV=ci
