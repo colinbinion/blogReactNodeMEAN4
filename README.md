@@ -42,3 +42,4 @@ hooked into mongoose for cached query
 jest runs tests in parallel
 
 doc.travis-ci.com
+pkill node
