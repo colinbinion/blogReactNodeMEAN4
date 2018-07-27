@@ -13,3 +13,11 @@ services:
 # list enviroment variables
 env:
   - NODE_ENV=ci
+# cacheing node_modules to reduce debt
+cache:
+  - node_modules
+  - client/node_modules
+# gets project ready to run inside VM
+install:
+  - npm install
+  - npm run build
