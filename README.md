@@ -43,3 +43,6 @@ jest runs tests in parallel
 
 doc.travis-ci.com
 pkill node
+
+default mongodb port 27017
+default redis port 6379

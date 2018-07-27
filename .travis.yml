@@ -9,10 +9,10 @@ dist: trusty
 # list services NN
 services:
   - mongodb
-  - reds-server
+  - redis-server
 # list enviroment variables
 env:
-  - NODE_ENV=ci
+  - NODE_ENV=ci PORT=3000
 # cacheing node_modules to reduce debt
 cache:
   - node_modules
@@ -26,4 +26,3 @@ script:
   - nohup npm run start &
   - sleep 3
   - npm run test
-
