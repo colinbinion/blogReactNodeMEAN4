@@ -14,7 +14,6 @@ class CustomPage {
 
     return new Proxy(customPage, {
       get: function (target, property) {
-        // order of return is important for browser to close before page
         return customPage[property] || browser[property] || page[property];
       }
     });

@@ -11,7 +11,6 @@ afterEach(async () => {
   await page.close();
 });
 
-// adds strucural nested describes
 describe('When logged in', async () => {
   beforeEach(async () => {
     await page.login();
@@ -26,8 +25,8 @@ describe('When logged in', async () => {
 
   describe('And using valid inputs', async () => {
     beforeEach(async () => {
-      await page.type('.title input', 'My Painful Testing Title');
-      await page.type('.content input', 'My Testing Content Is Finally Working');
+      await page.type('.title input', 'My Title');
+      await page.type('.content input', 'My Content');
       await page.click('form button');
     });
 
@@ -44,8 +43,8 @@ describe('When logged in', async () => {
       const title = await page.getContentsOf('.card-title');
       const content = await page.getContentsOf('p');
 
-      expect(title).toEqual('My Painful Testing Title');
-      expect(content).toEqual('My Testing Content Is Finally Working');
+      expect(title).toEqual('My Title');
+      expect(content).toEqual('My Content');
     });
   });
 
@@ -64,7 +63,6 @@ describe('When logged in', async () => {
   });
 });
 
-// .fetch returns raw data must must use .then(res => res.json())
 describe('User is not logged in', async () => {
   const actions = [{
       method: 'get',
@@ -78,12 +76,13 @@ describe('User is not logged in', async () => {
         content: 'C'
       }
     }
+    // {
+    //  method: 'get',
+    //  path: '/api/blahblah'
+    // }
   ];
 
-  // PUT
-  // DELETE
-
-  test('Main App/Blog related actions are prohibited', async () => {
+  test('Blog related actions are prohibited', async () => {
     const results = await page.execRequests(actions);
 
     for (let result of results) {
