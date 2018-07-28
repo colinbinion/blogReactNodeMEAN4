@@ -46,3 +46,5 @@ pkill node
 
 default mongodb port 27017
 default redis port 6379
+
+fix file extensions with npm mime-types
